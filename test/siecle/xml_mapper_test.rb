@@ -1,11 +1,9 @@
 require "test_helper"
 
 class Siecle::XmlMapperTest < Minitest::Test
-  def test_that_it_has_a_version_number
-    refute_nil ::Siecle::XmlMapper::VERSION
-  end
-
   def test_it_does_something_useful
-    assert false
+    contenu_xml = File.read("test/fixtures/files/nomenclature_simple.xml")
+    etablissement = Siecle::XmlMapper.lit(contenu_xml)
+    assert_equal "0123456S", etablissement.uai
   end
 end
