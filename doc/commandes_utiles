@@ -1,1 +1,1 @@
-git config commit.template=.gitmessage
+git config commit.template .gitmessage
